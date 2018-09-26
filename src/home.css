@@ -1,0 +1,179 @@
+
+/* menu tab */
+.menu {
+    margin-top: 2px;
+    position: relative;
+    width: auto;
+    height: 50px;
+    background-color: royalblue;
+}
+
+body {
+    background-color: antiquewhite;
+}
+
+.tab {
+    width: min-content;
+    height: 46px;
+    padding: 0px 15px;
+    font-size: 15px;
+    text-align: bottom;
+    vertical-align: middle;
+    float: left;
+    margin-top: 2px;
+    line-height: 46px;
+    color: white;
+    cursor: pointer;
+}
+
+.btn-login {
+    width: max-content;
+    height: 40px;
+    border-radius: 20px;
+    background-color: #8c8cff;
+    text-align: center;
+    line-height: 40px;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 0px 30px;
+    margin-top: 5px;
+    margin-right: 20px;
+    color: white;
+    cursor: pointer;
+    user-select: none;
+    float: right;
+}
+
+.btn-login-phone {
+    display: none;
+}
+
+.btn-login:hover {
+    background-color: #1f1fa3;
+    color: white;
+}
+.item {
+    height: 46px;
+    width: 46px;
+    padding: 2px;
+    background: url(./menu.png);
+    text-align: center;
+    display: none;
+}
+
+.tab:hover {
+    background-color: #3354cc;
+}
+
+@media screen and (max-width: 480px) {
+    .container {
+        margin: 0;
+        padding: 0 3px;
+    }
+
+    .tab-color {
+        height: 50px;
+        background-color: royalblue;
+        width: auto;
+    }
+
+    body {
+        background-color: white;
+    }
+
+    .tab {
+       display: none;
+       border-top: 2px solid #4c4c4c;
+    }
+    
+    .btn-login {
+        display: none;
+    }
+
+    .btn-login-phone {
+        width: max-content;
+        height: 40px;
+        border-radius: 20px;
+        background-color: #8c8cff;
+        text-align: center;
+        line-height: 40px;
+        padding: 0px 30px;
+        color: white;
+        cursor: pointer;
+        position: absolute;
+        display: block;
+        right: 5px;
+        top: 5px;
+        z-index: 2;
+    }
+    .item {
+        display: block;
+    }
+
+    .menu {
+        height: auto;
+        z-index: 1;
+        background-color:royalblue;
+        position: absolute;
+        top: 0px;
+    }
+    
+   
+}
+
+@media screen and (max-width: 480px) {
+    .responsive {
+
+    }
+    .responsive .btn-login {
+        position: absolute;
+        right: 0px;
+        top: 0px;
+    }
+    .responsive .tab {
+        float: none;
+        width: auto;
+        margin: 1px 0px;
+        display: block;
+    }
+} /* end menu tab */
+
+/* start home body */
+.home-body {
+    position: relative;
+    padding-top: 10px;
+    border-top: 2px solid #4c4c4c;
+    float: none;
+    background-color: white;
+}
+
+.start-account {
+    width: auto;
+    height: max-content;
+}
+
+.btn-start-account {
+    height: 50px;
+    width: 300px;
+    text-align: center;
+    line-height: 50px;
+    font-size: 20px;
+    color: white;
+    background-color: #f72c2c;
+    border-radius: 16px;
+    cursor: pointer;
+    box-shadow: 0px 5px #686d7e;
+    user-select: none;
+}
+
+.btn-start-account:active {
+    margin-top: 5px;
+    box-shadow: none;
+}
+
+@media screen and (max-width: 480px) {
+    .btn-start-account {
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
