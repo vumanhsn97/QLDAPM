@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import $ from 'jquery';
 import './home.css';
 class Home extends Component {
   constructor(){
@@ -33,7 +34,6 @@ class Home extends Component {
 
 class Tab extends Component {
   handleClick(){
-    console.log("This is click");
     var x = document.getElementById("m_menu");
     if (x.className === "menu") {
       x.className = x.className + " responsive";
@@ -67,13 +67,29 @@ class Tab extends Component {
 }
 
 class Body extends Component {
+
   render() {
     return (
       <div class = "home-body">
         <div class = "start-account">
+        <div class = "start-account-left">
+          <div class = "monitor">
+            <div class = "text-monitor">
+              
+            </div>
+          </div>
+        </div>
+        <div class = "start-account-right">
+          <div class = "text-account-right">If you don't have an account! Please click here</div>
           <div class = "btn-start-account">
             START FREE ACCOUNT
           </div>
+        </div>
+        </div>
+        <div class = "body-center">
+          <div class = "body-center-title">Let's to start and write some things here</div>
+        </div>
+        <div class = "body-bottom">
         </div>
       </div>
     );
