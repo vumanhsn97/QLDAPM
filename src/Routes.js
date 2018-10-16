@@ -1,0 +1,19 @@
+import React from "react";
+import { Route, Switch } from "react-router-dom";
+import Home from "./pages/home/Home";
+import NotFound from "./pages/notfound/NotFound";
+import Login from "./pages/login/Login";
+import Signup from "./pages/signup/Signup";
+import NewProject from "./pages/newproject/NewProject";
+import IssueDetails from "./pages/issuedetails/IssueDetails";
+
+export default () =>
+  <Switch>
+    <Route path="/" exact component={Home} />
+    <Route path="/login" exact component={Login} />
+    <Route path="/signup" exact component={Signup} />
+    <Route path="/new-project" exact component={NewProject}/>
+    <Route path="/issue-details" exact component={IssueDetails}/>
+    { /* Finally, catch all unmatched routes */ }
+      <Route component={NotFound} />
+  </Switch>;
