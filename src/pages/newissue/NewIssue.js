@@ -6,9 +6,9 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
-import Cached from '@material-ui/icons/Cached'
+import ArrowDropUp from '@material-ui/icons/ArrowDropUp'
 
-class IssueDeatails extends React.Component {
+class NewIssue extends React.Component {
     render() {
         return (
             <div>
@@ -113,8 +113,8 @@ class IssueDeatails extends React.Component {
                                 />
                             </Grid>
                             <Button style={{ margin: "20px 0px", marginLeft: "auto", marginRight: "auto", backgroundColor: "blue", color: "white" }}>
-                                <Cached />
-                                Update
+                                <ArrowDropUp />
+                                Submit
                             </Button>
                         </Grid>
                     </form>
@@ -125,4 +125,4 @@ class IssueDeatails extends React.Component {
     }
 }
 
-export default IssueDeatails;
+export default NewIssue;
