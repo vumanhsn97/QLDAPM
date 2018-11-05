@@ -6,6 +6,7 @@ import Login from "./pages/login/Login";
 import Signup from "./pages/signup/Signup";
 import NewProject from "./pages/newproject/NewProject";
 import IssueDetails from "./pages/issuedetails/IssueDetails";
+import ListIssue from "./pages/listissue/ListIssue"
 
 export default () =>
   <Switch>
@@ -14,6 +15,7 @@ export default () =>
     <Route path="/signup" exact component={Signup} />
     <Route path="/new-project" exact component={NewProject}/>
     <Route path="/issue-details" exact component={IssueDetails}/>
+    <Route path="/list-issue" exact component={ListIssue}/>
     { /* Finally, catch all unmatched routes */ }
       <Route component={NotFound} />
   </Switch>;
