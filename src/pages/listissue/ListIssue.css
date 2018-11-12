@@ -1,0 +1,121 @@
+.main {
+    width: 100%;
+    height: 500px;
+}
+
+.search {
+    width: 300px;
+    height: 50px;
+    float: left;
+}
+
+@media only screen and (max-width: 800px) {
+    .search {
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+        float: none;
+    }
+}
+
+.title {
+    width: 100px;
+    height: 50px;
+    color: red;
+    font-size: 16px;
+    padding: 10px;
+    margin: center;
+    float: right;
+}
+
+.select {
+    width: 120px;
+    height: 50px;
+    float: right;
+}
+
+.option {
+    width: 110px;
+}
+
+@media only screen and (max-width: 800px) {
+    .title {
+        float: none;
+    }
+}
+
+.id {
+    float: left;
+    width: 50px;
+    text-align: center;
+}
+
+.Title {
+    width: auto;
+    float: left;
+}
+
+.assignee {
+    float: right;
+    width: 300px;
+}
+
+.priority {
+    float: right;
+    width: 120px;
+}
+
+.status {
+    float: right;
+    width: 170px;
+}
+
+.update {
+    float: right;
+    width: 190px;
+}
+
+#display {
+}
+
+#undisplay {
+    display: none;
+}
+
+@media only screen and (max-width: 800px) {
+    .id {
+        float: none;
+    }
+
+    #display {
+        display: none;
+    }
+
+    #undisplay {
+        display: inline;
+        float: left;
+        padding-right: 10px;
+        width: auto;
+    }
+
+    .Title {
+        float: none;
+        padding-left: 10px;
+    }
+
+    .assignee {
+        float: none;
+    }
+
+    .priority {
+        float: none;
+    }
+
+    .status {
+        float: none;
+    }
+
+    .update {
+        float: none;
+    }
+}

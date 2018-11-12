@@ -1,4 +1,5 @@
 import React from 'react';
+import './ListIssue.css';
 import HeaderLogin from '../../containers/headers/HeaderLogin';
 import Footer from '../../containers/footer/Footer';
 import Grid from '@material-ui/core/Grid';
@@ -19,21 +20,37 @@ class ListIssue extends React.Component {
                 priority: "Hign",
                 status: "In Progress",
                 date: "dadad"
-            }]
+            },
+            {
+                id: "2",
+                title: "hello w",
+                assignee: "manh",
+                priority: "Hign",
+                status: "In Progress",
+                date: "dadad"
+            }
+        ]
         }
     }
 
     render() {
         const listIssue = this.state.list.map((issue) => {
             return (
-                <Grid container>
-                    <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>{issue.id}</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>{issue.title}</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>{issue.assignee}</div></Grid>
-                            <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>{issue.priority}</div></Grid>
-                            <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>{issue.status}</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>{issue.date}</div></Grid>
-                </Grid>
+                <div>
+                    <div style={{width:"100%", height: "30px"}}></div>
+                    <div id="undisplay">Id: </div>
+                    <div className="id">{issue.id}</div>
+                    <div id="undisplay">Title: </div>
+                    <div className="Title">{issue.title}</div>
+                    <div id="undisplay">Update at: </div>
+                    <div className="update">{issue.date}</div>
+                    <div id="undisplay">Status: </div>
+                    <div className="status">{issue.status}</div>
+                    <div id="undisplay">Priority: </div>
+                    <div className="priority">{issue.priority}</div>
+                    <div id="undisplay">Assignee: </div>
+                    <div className="assignee">{issue.assignee}</div>
+                </div>
             );
         });
         return (
@@ -42,46 +59,18 @@ class ListIssue extends React.Component {
                 <div style={{ padding: "0px 30px" }}>
                     <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > List Issue</div>
                     <form>
-                        <Grid container>
-                            <Grid xs={12} sm={6} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>
+                        <div container className="main">
+                            <div className="search">
                                 <form>
                                     <input type="text" style={{ color: "black", border: "1px solid black" }} />
                                 </form>
-                            </Grid>
-                            <Grid xs={6} sm={1}><div style={{ padding: "10px", margin: "center" }}>Assignee</div></Grid>
-                            <Grid xs={6} sm={1}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="assign"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={6} sm={1}><div style={{ padding: "10px", margin: "center" }}>Priority</div></Grid>
-                            <Grid xs={6} sm={1}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="priority"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={6} sm={1}><div style={{ padding: "10px", margin: "center" }}>Status</div></Grid>
-                            <Grid xs={6} sm={1}>
+                            </div>
+                            <div className="select">
                                 <FormControl variant="filled">
                                     <Select
                                         native
                                         name="status"
+                                        className="option"
                                     >
                                         <option value="" />
                                         <option value={10}>Ten</option>
@@ -89,15 +78,47 @@ class ListIssue extends React.Component {
                                         <option value={30}>Thirty</option>
                                     </Select>
                                 </FormControl>
-                            </Grid>
-                            <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>Id</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>Title</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>Assignee</div></Grid>
-                            <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>Priority</div></Grid>
-                            <Grid xs={12} sm={1}><div style={{ padding: "10px", margin: "center" }}>Status</div></Grid>
-                            <Grid xs={12} sm={3}><div style={{ padding: "10px", margin: "center" }}>Update at</div></Grid>
+                            </div>
+                            <div className="title">Status</div>
+                            <div className="select">
+                                <FormControl variant="filled">
+                                    <Select
+                                        native
+                                        name="priority"
+                                        className="option"
+                                    >
+                                        <option value="" />
+                                        <option value={10}>Ten</option>
+                                        <option value={20}>Twenty</option>
+                                        <option value={30}>Thirty</option>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                            <div className="title">Priority</div>
+                            <div className="select">
+                                <FormControl variant="filled">
+                                    <Select
+                                        native
+                                        name="assign"
+                                        className="option"
+                                    >
+                                        <option value="" />
+                                        <option value={10}>Ten</option>
+                                        <option value={20}>Twenty</option>
+                                        <option value={30}>Thirty</option>
+                                    </Select>
+                                </FormControl>
+                            </div>
+                            <div className="title">Assignee</div>
+                            <div style={{width:"100%", height: "60px"}} id="display"></div>
+                            <div className="id" id="display">Id</div>
+                            <div className="Title" id="display">Title</div>
+                            <div className="update" id="display">Update at</div>
+                            <div className="status" id="display">Status</div>
+                            <div className="priority" id="display">Priority</div>
+                            <div className="assignee" id="display">Assignee</div>
                             {listIssue}
-                        </Grid>
+                        </div>
                     </form>
                 </div>
                 <Footer />
