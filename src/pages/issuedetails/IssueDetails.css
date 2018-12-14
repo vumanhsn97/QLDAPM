@@ -1,0 +1,22 @@
+.is-detail-text {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    overflow: hidden;
+}
+
+.description-label {
+    height: 160px;
+    padding: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    .description-label {
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .is-detail-text {
+        overflow: scroll;
+    }
+}

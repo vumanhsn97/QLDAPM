@@ -6,118 +6,167 @@ import TextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import Select from '@material-ui/core/Select';
 import Button from '@material-ui/core/Button';
-import ArrowDropUp from '@material-ui/icons/ArrowDropUp'
+import ArrowDropUp from '@material-ui/icons/ArrowDropUp';
+import './NewIssue.css';
 
 class NewIssue extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            title: "Title is here",
+            description: "This is description",
+            owner: "This is owner",
+            status: "This is status",
+
+        }
+    }
+
+    onTitleChange = (event) => {
+        this.setState({ title: event.target.value })
+    }
+
     render() {
         return (
             <div>
                 <HeaderLogin />
-                <div style={{padding:"0px 30px"}}>
-                    <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > Issue B</div>
-                    <form>
-                        <Grid container>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Title</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                Title is here
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Description</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                            Description is the fiction-writing mode for transmitting a mental 
-                            image of the particulars of a story. Together with dialogue, narration, exposition, 
-                            and summarization, description is one of the most widely recognized of the fiction-writing modes.
-                             As stated in Writing from A to Z, edited by Kirk Polking, description is more than the amassing of details;
-                              it is bringing something to 
-                            life by carefully choosing and arranging words and phrases to produce the desired effect.
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Owner</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                Owner is here
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Status
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="status"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Start date
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
+                <div style={{ padding: "0px 30px" }}>
+                    <div className="issue-container">
+                        <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > Issue B</div>
+                        <div className="is-title">
+                            <div className="is-label">
+                                Title
+                            </div>
+                            <div className="title-textfield">
                                 <TextField
-                                    type="date"
-                                    defaultValue="2017-05-24"
-                                />
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Priority
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="priority"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Due date
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <TextField
-                                    type="date"
-                                    defaultValue="2017-05-24"
-                                />
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Assignee
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="assignee"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Estimate
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <TextField
-                                    type="text"
+                                    rows="1"
                                     multiline
+                                    variant="outlined"
+                                    style={{ height: "40px" }}
                                 />
-                            </Grid>
-                            <Button style={{ margin: "20px 0px", marginLeft: "auto", marginRight: "auto", backgroundColor: "blue", color: "white" }}>
+                            </div>
+                        </div>
+                        <div className="is-description">
+                            <div className="is-label">Description</div>
+                            <div className="description-textfield">
+                                <TextField
+                                    multiline
+                                    className="description-size"
+                                    rows="6"
+                                    variant="outlined"
+                                />
+                            </div>
+                        </div>
+                        <div className="is-owner">
+                            <div className="is-label">Owner</div>
+                            <div className="owner-textfield">
+                                <TextField
+                                    multiline
+                                    variant="outlined"
+                                    rows="1"
+                                    style={{ height: "40px" }}
+                                />
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">Status</div>
+                                <div className="is-form-input">
+                                    <FormControl variant="filled">
+                                        <Select
+                                            native
+                                            name="status"
+                                            style={{ width: "200px" }}
+                                        >
+                                            <option value="" />
+                                            <option value={10}>Ten</option>
+                                            <option value={20}>Twenty</option>
+                                            <option value={30}>Thirty</option>
+                                        </Select>
+                                    </FormControl>
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">Start date</div>
+                                <div className="is-form-input">
+                                    <TextField
+                                        type="date"
+                                        defaultValue="2017-05-24"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">
+                                    Priority
+                                </div>
+                                <div className="is-form-input">
+                                    <FormControl variant="filled">
+                                        <Select
+                                            native
+                                            name="priority"
+                                            style={{ width: "200px" }}
+                                        >
+                                            <option value="" />
+                                            <option value={10}>Ten</option>
+                                            <option value={20}>Twenty</option>
+                                            <option value={30}>Thirty</option>
+                                        </Select>
+                                    </FormControl>
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">
+                                    Due date
+                                </div>
+                                <div className="is-form-input">
+                                    <TextField
+                                        type="date"
+                                        defaultValue="2017-05-24"
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">
+                                    Assignee
+                                </div>
+                                <div className="is-form-input">
+                                    <FormControl variant="filled">
+                                        <Select
+                                            native
+                                            name="assignee"
+                                            style={{ width: "200px" }}
+                                        >
+                                            <option value="" />
+                                            <option value={10}>Ten</option>
+                                            <option value={20}>Twenty</option>
+                                            <option value={30}>Thirty</option>
+                                        </Select>
+                                    </FormControl>
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">
+                                    Estimate
+                                </div>
+                                <div className="is-form-input">
+                                    <TextField
+                                        type="text"
+                                        multiline
+                                    />
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style={{ width: '107px', margin: "auto" }}>
+                            <Button style={{ margin: "20px 0px 50px 0px", backgroundColor: "blue", color: "white" }}>
                                 <ArrowDropUp />
                                 Submit
                             </Button>
-                        </Grid>
-                    </form>
+                        </div>
+                    </div>
                 </div>
                 <Footer />
             </div>

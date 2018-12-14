@@ -1,0 +1,115 @@
+.project-container {
+    margin: auto;
+    width: 1000px;
+}
+
+.project-header {
+    color: blue;
+    font-size: 30px;
+    padding: 20px;
+}
+
+.project-form {
+    width: 1000px;
+}
+
+.project-title {
+    float: left;
+    width: 200px;
+    height: 50px;
+    font-size: 20px;
+}
+
+.project-textfield {
+    float: right;
+    width: 800px;
+}
+
+.project-name {
+    height: 60px;
+    margin: auto;
+    line-height: 60px;
+}
+
+.project-des {
+    height: 150px;
+    margin: auto;
+    line-height: 150px;
+}
+
+.project-textfield-inv {
+    float: left;
+    width: 300px;
+}
+
+.project-rule {
+    float: left;
+    width: 150px;
+    margin: 0px 10px;
+}
+
+.project-add {
+    float: left;
+}
+
+.project-inv {
+    height: 60px;
+    margin: auto;
+    line-height: 60px;
+}
+
+@media screen and (max-width: 800px) {
+    .project-container {
+        width: auto;
+        margin: none;
+    }
+    
+    .project-form {
+        width: auto;
+    }
+
+    .project-title {
+        float: none;
+        margin: 0 10px;
+        padding-bottom: 6px;
+    }
+
+    .project-textfield {
+        float: none;
+        width: 100%;
+    }
+
+    .project-name {
+        line-height: 0px;
+        margin-bottom: 20px;
+    }
+
+    .project-des {
+        line-height: 0px;
+        margin-bottom: 20px;
+    }
+
+    .project-inv {
+        line-height: 0px;
+    }
+
+    .project-add {
+        margin: auto;
+        height: 60px;
+        line-height: 60px;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .project-textfield-inv {
+        float: none;
+    }
+}
+
+.link {
+    color: white;
+}
+
+.link:hover {
+    color: black;
+}

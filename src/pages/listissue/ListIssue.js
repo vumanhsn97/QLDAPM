@@ -29,20 +29,24 @@ class ListIssue extends React.Component {
                 status: "In Progress",
                 date: "dadad"
             }
-        ]
+            ]
         }
+    }
+
+    handleSearch = (event) => {
+        
     }
 
     render() {
         const listIssue = this.state.list.map((issue) => {
             return (
-                <div>
-                    <div style={{width:"100%", height: "30px"}}></div>
+                <div className="table-issue">
                     <div id="undisplay">Id: </div>
                     <div className="id">{issue.id}</div>
                     <div id="undisplay">Title: </div>
                     <div className="Title">{issue.title}</div>
                     <div id="undisplay">Update at: </div>
+                    <div className= "view"><a href="">view</a></div>
                     <div className="update">{issue.date}</div>
                     <div id="undisplay">Status: </div>
                     <div className="status">{issue.status}</div>
@@ -54,74 +58,71 @@ class ListIssue extends React.Component {
             );
         });
         return (
-            <div>
+            <div style={{height: "100vh"}}>
                 <HeaderLogin />
-                <div style={{ padding: "0px 30px" }}>
+                <div className="main">
                     <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > List Issue</div>
-                    <form>
-                        <div container className="main">
-                            <div className="search">
-                                <form>
-                                    <input type="text" style={{ color: "black", border: "1px solid black" }} />
-                                </form>
-                            </div>
-                            <div className="select">
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="status"
-                                        className="option"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </div>
-                            <div className="title">Status</div>
-                            <div className="select">
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="priority"
-                                        className="option"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </div>
-                            <div className="title">Priority</div>
-                            <div className="select">
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="assign"
-                                        className="option"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </div>
-                            <div className="title">Assignee</div>
-                            <div style={{width:"100%", height: "60px"}} id="display"></div>
-                            <div className="id" id="display">Id</div>
-                            <div className="Title" id="display">Title</div>
-                            <div className="update" id="display">Update at</div>
-                            <div className="status" id="display">Status</div>
-                            <div className="priority" id="display">Priority</div>
-                            <div className="assignee" id="display">Assignee</div>
-                            {listIssue}
+                    <div className="form">
+                        <div className="search">
+                            <TextField
+                                variant="outlined"
+                                value={this.state.memberform}
+                                multiline
+                                fullWidth
+                                rowsMax={1}
+                                style={{ padding: "10px", height: "50px" }}
+                                onChange={this.handleSearch}
+                            />
                         </div>
-                    </form>
+                        <div className="form-select">
+                            <div className="form-status">
+                                <div className="select">
+                                    <FormControl variant="filled">
+                                        <Select
+                                            native
+                                            name="status"
+                                            className="option"
+                                        >
+                                            <option value={0}>All</option>
+                                            <option value={1}>New</option>
+                                            <option value={2}>In progress</option>
+                                            <option value={3}>Release</option>
+                                        </Select>
+                                    </FormControl>
+                                </div>
+                                <div className="title">Status</div>
+                            </div>
+                            <div className="form-priority">
+                                <div className="select">
+                                    <FormControl variant="filled">
+                                        <Select
+                                            native
+                                            name="priority"
+                                            className="option"
+                                        >
+                                            <option value={0}>All</option>
+                                            <option value={1}>No</option>
+                                            <option value={2}>Low</option>
+                                            <option value={3}>Normal</option>
+                                            <option value={3}>High</option>
+                                        </Select>
+                                    </FormControl>
+                                </div>
+                                <div className="title">Priority</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div className="table-title">
+                        <div className="id" id="display">Id</div>
+                        <div className="Title" id="display">Title</div>
+                        <div className= "view" id="display">View</div>
+                        <div className="update" id="display">Update at</div>
+                        <div className="status" id="display">Status</div>
+                        <div className="priority" id="display">Priority</div>
+                        <div className="assignee" id="display">Assignee</div>
+                    </div>
+                    {listIssue}
                 </div>
-                <Footer />
             </div>
         );
     }

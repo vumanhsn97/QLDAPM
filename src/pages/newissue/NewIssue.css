@@ -1,0 +1,119 @@
+.issue-container {
+    width: 1000px;
+    margin: auto;
+}
+
+.is-label {
+    width: 100px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    float: left;
+    color: blue;
+}
+
+.is-title {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.title-textfield {
+    height: 40px;
+    width: 500px;
+}
+
+.is-description {
+    margin-top: 20px;
+    margin-bottom: 10px;
+}
+
+.description-textfield {
+    height: 160px;
+}
+
+.description-size {
+    width: 900px;
+}
+
+.is-owner {
+    height: 40px;
+    margin-bottom: 10px;
+}
+
+.owner-textfield {
+    height: 40px;
+}
+
+.is-form {
+    margin-top: 20px;
+    width: auto;
+    float: none;
+    height: 40px;
+}
+
+.label-left {
+    float: left;
+}
+
+.label-right {
+    float: right;
+}
+
+.is-form-label {
+    width: 100px;
+    float: left;
+    line-height: 40px;
+    color: blue;
+}
+
+.is-form-input {
+    width: 300px;
+}
+
+@media screen and (max-width: 800px) {
+    .issue-container {
+        width: auto;
+    }
+    
+    .is-label {
+        float: none;
+    }
+
+    .is-title {
+        height: 70px;
+        padding: 0px 10px;
+    }
+
+    .is-description {
+        height: 190px;
+        padding: 0px 10px;
+    }
+
+    .is-owner {
+        height: 70px;
+        padding: 0px 10px;
+    }
+
+    .description-size {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .label-left {
+        float: none;
+    }
+    .label-right {
+        float: none;
+    }
+    .is-form {
+        height: 140px;
+        padding: 0px 10px;
+    }
+    .is-form-label {
+        float: none;
+        line-height: 20px;
+    }
+    .is-form-input {
+        margin-bottom: 30px;
+    }
+}

@@ -1,10 +1,11 @@
 import React, { Component } from "react";
+import { Link } from 'react-router-dom';
 import axios from "axios";
 import Header from "../../containers/headers/Header"
 import { Button, FormGroup, FormControl, ControlLabel } from "react-bootstrap";
 import "./Login.css";
 
-export default class Login extends Component {
+class Login extends Component {
   constructor(props) {
     super(props);
 
@@ -40,7 +41,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{height: "100vh"}}>
         <Header />
         <div className="Login">
           <form onSubmit={this.handleSubmit}>
@@ -49,6 +50,7 @@ export default class Login extends Component {
               <FormControl
                 autoFocus
                 type="email"
+                style={{color: "black"}}
                 onChange={this.handleChange}
               />
             </FormGroup>
@@ -57,15 +59,15 @@ export default class Login extends Component {
               <FormControl
                 onChange={this.handleChange}
                 type="password"
+                style={{color: "black"}}
               />
             </FormGroup>
             <Button
               block
               bsSize="large"
-              disabled={!this.validateForm()}
               type="submit"
             >
-              Login
+              <Link to="/list-issue">Login</Link>
           </Button>
           </form>
         </div>
@@ -73,3 +75,5 @@ export default class Login extends Component {
     );
   }
 }
+
+export default Login;

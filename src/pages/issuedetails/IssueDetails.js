@@ -1,123 +1,100 @@
 import React from 'react';
 import HeaderLogin from '../../containers/headers/HeaderLogin';
 import Footer from '../../containers/footer/Footer';
-import Grid from '@material-ui/core/Grid';
-import TextField from '@material-ui/core/TextField';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Button from '@material-ui/core/Button';
-import Cached from '@material-ui/icons/Cached'
+import './IssueDetails.css'
 
 class IssueDeatails extends React.Component {
+    constructor(props) {
+        super(props);
+        this.state = {
+            description: "Description is the fiction-writing mode for transmitting a mental image of the particulars of a story. Together with dialogue, narration, exposition, and summarization, description is one of the most widely recognized of the fiction-writing modes. As stated in Writing from A to Z, edited by Kirk Polking, description is more than the amassing of details; it is bringing something to life by carefully choosing and arranging words and phrases to produce the desired effect.",
+            title: "Title here",
+            owner: "vumanh",
+            status: "heleu",
+            start: "12-02-2007",
+            priority: "Hellu",
+            due: "13-06-2008",
+            assignee: "hihi",
+            estimate: 23
+        }
+    }
     render() {
         return (
-            <div>
-                <HeaderLogin />
-                <div style={{padding:"0px 30px"}}>
-                    <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > Issue B</div>
-                    <form>
-                        <Grid container>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Title</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                Title is here
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Description</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                            Description is the fiction-writing mode for transmitting a mental 
-                            image of the particulars of a story. Together with dialogue, narration, exposition, 
-                            and summarization, description is one of the most widely recognized of the fiction-writing modes.
-                             As stated in Writing from A to Z, edited by Kirk Polking, description is more than the amassing of details;
-                              it is bringing something to 
-                            life by carefully choosing and arranging words and phrases to produce the desired effect.
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", fontWeight: "bold", fontSize: "20px" }}>Owner</Grid>
-                            <Grid xs={12} sm={11} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                Owner is here
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Status
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="status"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Start date
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <TextField
-                                    type="date"
-                                    defaultValue="2017-05-24"
-                                />
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Priority
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="priority"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Due date
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <TextField
-                                    type="date"
-                                    defaultValue="2017-05-24"
-                                />
-                            </Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Assignee
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <FormControl variant="filled">
-                                    <Select
-                                        native
-                                        name="assignee"
-                                    >
-                                        <option value="" />
-                                        <option value={10}>Ten</option>
-                                        <option value={20}>Twenty</option>
-                                        <option value={30}>Thirty</option>
-                                    </Select>
-                                </FormControl>
-                            </Grid>
-                            <Grid xs={0} sm={4}></Grid>
-                            <Grid xs={12} sm={1} style={{ paddingLeft: "10px", margin: "auto" }}>
-                                Estimate
-                            </Grid>
-                            <Grid xs={12} sm={3} style={{ paddingLeft: "10px", marginBottom: "20px" }}>
-                                <TextField
-                                    type="text"
-                                    multiline
-                                />
-                            </Grid>
-                            <Button style={{ margin: "20px 0px", marginLeft: "auto", marginRight: "auto", backgroundColor: "blue", color: "white" }}>
-                                <Cached />
-                                Update
-                            </Button>
-                        </Grid>
-                    </form>
+            <div style={{height: "100vh"}}>
+                <div style={{ padding: "0px 30px" }}>
+                    <div className="issue-container">
+                        <div style={{ color: "blue", fontSize: "30px", padding: "20px" }}>Project A > Issue B</div>
+                        <div className="is-title">
+                            <div className="is-label">
+                                Title
+                            </div>
+                            <div className="title-textfield  is-detail-text">
+                                {this.state.title}
+                            </div>
+                        </div>
+                        <div className="is-description">
+                            <div className="is-label description-label">Description</div>
+                            <div className="description-textfield is-detail-text">
+                                {this.state.description}
+                            </div>
+                        </div>
+                        <div className="is-owner">
+                            <div className="is-label">Owner</div>
+                            <div className="owner-textfield is-detail-text">
+                                {this.state.owner}
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">Status</div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.status}
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">Start date</div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.start}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">
+                                    Priority
+                                </div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.priority}
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">
+                                    Due date
+                                </div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.due}
+                                </div>
+                            </div>
+                        </div>
+                        <div className="is-form">
+                            <div className="label-left">
+                                <div className="is-form-label">
+                                    Assignee
+                                </div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.assignee}
+                                </div>
+                            </div>
+                            <div className="label-right">
+                                <div className="is-form-label">
+                                    Estimate
+                                </div>
+                                <div className="is-form-input is-detail-text">
+                                    {this.state.estimate}
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <Footer />
             </div>

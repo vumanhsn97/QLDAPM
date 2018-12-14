@@ -1,6 +1,6 @@
 .main {
-    width: 100%;
-    height: 500px;
+    width: 1000px;
+    margin: auto;
 }
 
 .search {
@@ -9,39 +9,63 @@
     float: left;
 }
 
-@media only screen and (max-width: 800px) {
-    .search {
-        width: 100%;
-        margin-left: auto;
-        margin-right: auto;
-        float: none;
-    }
+.form {
+    width: 1000px;
+    height: 50px;
 }
 
 .title {
-    width: 100px;
-    height: 50px;
+    height: 40px;
     color: red;
     font-size: 16px;
-    padding: 10px;
-    margin: center;
-    float: right;
+    margin-top: 10px;
+    float: left;
+    line-height: 40px;
 }
 
 .select {
     width: 120px;
     height: 50px;
     float: right;
+    margin: auto;
+    line-height: 50px;
 }
 
 .option {
-    width: 110px;
+    width: 120px;
+    margin-top: 12px;
 }
 
-@media only screen and (max-width: 800px) {
-    .title {
-        float: none;
-    }
+.form-select {
+    float: right;
+}
+
+.form-status {
+    float: left;
+    width: 180px;
+}
+
+.form-priority {
+    float: left; 
+    width: 185px; 
+    margin-left: 40px;
+}
+
+.table-issue {
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    float: none;
+}
+
+.table-title {
+    margin-top: 20px;
+    margin-bottom: 10px;
+    size: 18px;
+    width: 1000px;
+    height: 30px;
+    line-height: 30px;
+    float: none;
 }
 
 .id {
@@ -72,7 +96,12 @@
 
 .update {
     float: right;
-    width: 190px;
+    width: 170px;
+}
+
+.view {
+    float: right;
+    width: 40px;
 }
 
 #display {
@@ -83,6 +112,43 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .search {
+        width: 600px;
+        float: none;
+    }
+
+    .main {
+        width: auto;
+    }
+
+    .table-issue {
+        width: auto;
+    }
+
+    .table-title {
+        width: auto;
+    }
+
+    .form {
+        width: auto;
+    }
+
+    .form-select {
+        float: none;
+        margin-left: 10px;
+    }
+
+    .table-issue {
+        height: 200px;
+        padding: 10px;
+        border: 1px solid black;
+        margin: 10px;
+    }
+
+    .title {
+        float: none;
+    }
+
     .id {
         float: none;
     }
@@ -117,5 +183,28 @@
 
     .update {
         float: none;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .search {
+        width: auto;
+    }
+    
+    .form {
+        height: 110px;
+    }
+    
+    .form-status {
+        float: none;
+    }
+
+    .form-priority {
+        float: none;
+        margin-left: 0px;
+    }
+
+    .option {
+        margin-top: 0px;
     }
 }

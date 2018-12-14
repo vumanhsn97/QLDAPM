@@ -31,7 +31,7 @@ export default class Login extends Component {
 
   render() {
     return (
-      <div>
+      <div style={{height: "100%"}}>
         <Header />
         <div className="main-agileinfo" style={{ backgroundColor: "white" }}>
           <h1 style={{ color: "black" }}>Signup</h1>
